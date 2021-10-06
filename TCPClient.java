@@ -16,19 +16,19 @@ public class TCPClient {
             DataOutputStream out = new DataOutputStream( s.getOutputStream());
 
             Scanner scanner = new Scanner(System.in);
-           	Game.launch(in, out, scanner, false);
+            Game.launch(in, out, scanner, false);
         } catch (UnknownHostException e) {
-        	System.out.println("UnknownHostException:" + e.getMessage());
+            System.out.println("UnknownHostException:" + e.getMessage());
         } catch (EOFException e) {
-        	System.out.println("EOFException:" + e.getMessage());
+            System.out.println("EOFException:" + e.getMessage());
         } catch (IOException e) {
-        	System.out.println("IOException:" + e.getMessage());
+            System.out.println("IOException:" + e.getMessage());
         } finally {
-        	if (s != null)
-        		try {
-        			s.close();
-        		} catch (IOException e) {
-        			System.out.println("IOException [on close socket]: " + e.getMessage());}
+            if (s != null)
+                try {
+                    s.close();
+                } catch (IOException e) {
+                    System.out.println("IOException [on close socket]: " + e.getMessage());}
         }
     }
 }
